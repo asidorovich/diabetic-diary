@@ -1,0 +1,11 @@
+packages/
+DD.Services.Interfaces/obj/
+DiabeticDiary.Web/obj/
+DD.Repositories/obj/
+DD.Repositories.Interfaces/obj/
+DD.Data/obj/
+DD.Common/obj/
+DD.Dto.Business/obj/
+DD.Dto.Repository/obj/
+DD.Services/obj/
+DD.Database/obj/
