@@ -10,5 +10,10 @@ namespace DiabeticDiary.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult PersonRecordGrid()
+        {
+            return PartialView("~/Views/PersonRecords/Grid.cshtml");
+        }
     }
 }
