@@ -11,13 +11,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="record in personRecord.records">
-                <td>08:00</td>
-                <td></td>
-                <td>5.6</td>
-                <td>6.0 (6.2)</td>
-                <td>3.0</td>
-                <td>Raw data is 6.2</td>
+            <tr ng-repeat="record in personRecords">
+                <td>{{record.RecordTime}}</td>
+                <td>{{record.Carbohydrates}}</td>
+                <td>{{record.BloodGloucoseBgm}}</td>
+                <td>{{record.BloodGloucoseCgmFull}}</td>
+                <td>{{record.Insulin}}</td>
+                <td>{{record.Note}}</td>
             </tr>
         </tbody>
     </table>

@@ -41,6 +41,9 @@
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="FastMapper">
+      <HintPath>..\packages\FastMapper.1.2.0\lib\net40\FastMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
@@ -52,8 +55,32 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -67,26 +94,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Web.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages.Deployment">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Helpers">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -111,10 +120,15 @@
     <Content Include="Global.asax" />
     <Content Include="Icon.png" />
     <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
-    <Content Include="Scripts\app\controllers\personRecord.js" />
+    <Content Include="Scripts\app\controllers\personRecordAdd.js" />
+    <Content Include="Scripts\app\controllers\personRecordList.js" />
     <Content Include="Scripts\app\directives\personRecord.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -122,7 +136,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-resource.min.js.map" />
     <None Include="Scripts\jquery-1.9.1-vsdoc.js" />
+    <Content Include="Scripts\app\directives\personRecordAdd.js" />
+    <Content Include="Scripts\app\services\personRecordServices.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -148,6 +166,7 @@
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Views\PersonRecords\Grid.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\PersonRecords\Add.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -163,6 +182,14 @@
     <ProjectReference Include="..\DD.Dto.Business\DD.Dto.Business.csproj">
       <Project>{0c85747e-8616-4ebc-a200-786ce340508b}</Project>
       <Name>DD.Dto.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DD.Services.Interfaces\DD.Services.Interfaces.csproj">
+      <Project>{34c98b07-bce8-4ded-8f3d-ea403e73d77e}</Project>
+      <Name>DD.Services.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DD.Web.Ioc\DD.Web.Ioc.csproj">
+      <Project>{52f8dcf7-c42f-4c55-b492-d91d25e83753}</Project>
+      <Name>DD.Web.Ioc</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

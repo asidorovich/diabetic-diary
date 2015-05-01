@@ -39,7 +39,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Base\IService.cs" />
+    <Compile Include="Common\IPersonRecordService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DD.Dto.Business\DD.Dto.Business.csproj">
+      <Project>{0c85747e-8616-4ebc-a200-786ce340508b}</Project>
+      <Name>DD.Dto.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DD.Repositories.Interfaces\DD.Repositories.Interfaces.csproj">
+      <Project>{1745a286-c67a-4fa9-bba9-fc4015382f00}</Project>
+      <Name>DD.Repositories.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

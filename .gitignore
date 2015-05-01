@@ -9,3 +9,9 @@ DD.Dto.Business/obj/
 DD.Dto.Repository/obj/
 DD.Services/obj/
 DD.Database/obj/
+DD.Mappers/obj/
+DD.Web.Ioc/bin/
+DD.Web.Ioc/obj/
+DiabeticDiary.Web/bin/Microsoft.Practices.ServiceLocation.xml
+DiabeticDiary.Web/bin/
+DD.Repositories/bin/

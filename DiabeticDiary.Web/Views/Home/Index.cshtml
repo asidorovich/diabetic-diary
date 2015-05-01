@@ -10,8 +10,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-
-    
+    <base href="/">
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -36,20 +35,36 @@
     </nav>
     <div class="container">
         <div class="content">
-            
-                <person-record-grid>
-                </person-record-grid>
-            </div>
-        
-    </div><!-- /.container -->
+            <a href="/add">Add</a>
+            <div ng-view></div>
+        </div>
 
+    </div><!-- /.container -->
     @Styles.Render("~/bundles/css")
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/angularjs")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/app")
-    <script type="text/javascript" src="~/Scripts/app/controllers/personRecord.js"></script>
-    <script type="text/javascript" src="~/Scripts/app/directives/personRecord.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (!cookieExists("_timeZoneOffset")) {
+                var now = new Date();
+                var timeZoneOffset = -now.getTimezoneOffset(); // in minutes
+                now.setTime(now.getTime() + 10 * 24 * 60 * 60 * 1000); // keep it for 10 days
+                document.cookie = "_timeZoneOffset=" + timeZoneOffset.toString() + ";expires=" + now.toGMTString() + ";path=/;" + document.cookie;
+            }
+        });
+
+        function cookieExists(name) {
+            var nameToFind = name + "=";
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                if (cookies[i].trim().indexOf(nameToFind) === 0) return true;
+            }
+            return false;
+        }
+    </script>
 </body>
 </html>

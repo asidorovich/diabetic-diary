@@ -39,18 +39,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Base\Service.cs" />
+    <Compile Include="Common\PersonRecordService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DD.Data\DD.Data.csproj">
+      <Project>{8495da6c-e0f7-471e-8043-387dfb8c5647}</Project>
+      <Name>DD.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DD.Dto.Business\DD.Dto.Business.csproj">
       <Project>{0c85747e-8616-4ebc-a200-786ce340508b}</Project>
       <Name>DD.Dto.Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DD.Dto.Repository\DD.Dto.Repository.csproj">
-      <Project>{e7d2a0e2-8105-4c9f-906b-4d201a0718b9}</Project>
-      <Name>DD.Dto.Repository</Name>
+    <ProjectReference Include="..\DD.Repositories.Interfaces\DD.Repositories.Interfaces.csproj">
+      <Project>{1745a286-c67a-4fa9-bba9-fc4015382f00}</Project>
+      <Name>DD.Repositories.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DD.Services.Interfaces\DD.Services.Interfaces.csproj">
+      <Project>{34c98b07-bce8-4ded-8f3d-ea403e73d77e}</Project>
+      <Name>DD.Services.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

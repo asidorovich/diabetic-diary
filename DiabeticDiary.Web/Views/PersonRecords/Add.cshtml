@@ -1,0 +1,21 @@
+﻿<h1>Add Record</h1>
+<div class="row">
+    <div class="col-md-5">
+        <form ng-submit="add()">
+            <div class="form-group">
+                <label for="RecordTime">Time</label>
+                <input name="RecordTime" type="time" class="form-control" placeholder="Enter record time" ng-model="personRecord.RecordTime">
+            </div>
+            <div class="form-group">
+                <label for="Insulin">Insulin</label>
+                <input name="Insulin" type="number" min="0.0" step="any" class="form-control" placeholder="Enter insulin" ng-model="personRecord.Insulin">
+            </div>
+            <div class="form-group">
+                <label for="Director">Director</label>
+                <input name="Director" type="text" class="form-control" placeholder="Enter director" ng-model="movie.Director">
+            </div>
+            <a href="/" class="btn btn-default">Cancel</a>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
