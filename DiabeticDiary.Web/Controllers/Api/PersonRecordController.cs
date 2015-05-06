@@ -1,26 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
-using DD.Dto.Business;
+using DD.Mappers.Common.Interfaces;
 using DD.Services.Interfaces.Common;
+using DD.ViewModels.Web;
 
 namespace DiabeticDiary.Web.Controllers.Api
 {
     public class PersonRecordController : ApiController
     {
         private IPersonRecordService _personRecordService;
+        private IViewModelMapper _mapper;
 
-        public PersonRecordController(IPersonRecordService personRecordService)
+        public PersonRecordController(IPersonRecordService personRecordService, IMapper mapper)
         {
             _personRecordService = personRecordService;
+            _mapper = mapper;
         }
 
         #region Public Methods
 
         // GET api/<controller>
-        public IEnumerable<PersonRecordDto> GetPersonRecordsForDate(int personId, DateTime date)
+        public IEnumerable<PersonRecordViewModel> GetPersonRecordsForDate(int personId, DateTime date)
         {
-            var result = _personRecordService.GetAllPersonRecords(personId);
+            var result = new List<PersonRecordViewModel>();
+
+            var personRecords = _personRecordService.GetAllPersonRecords(personId);
+
+            if (personRecords.Any())
+            {
+                result.AddRange(personRecords.Select(personRecord => _mapper.Map(personRecord)));
+            }
 
             return result;
         }
@@ -32,8 +43,11 @@ namespace DiabeticDiary.Web.Controllers.Api
         }
 
         // POST api/<controller>
-        public void Post([FromBody]PersonRecordDto personRecord)
+        public void Post([FromBody]PersonRecordViewModel personRecord)
         {
+            var dto = _mapper.Map(personRecord);
+
+            _personRecordService.SavePersonRecord(dto);
         }
 
         // PUT api/<controller>/5

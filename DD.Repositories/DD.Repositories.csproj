@@ -53,9 +53,9 @@
       <Project>{8495da6c-e0f7-471e-8043-387dfb8c5647}</Project>
       <Name>DD.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DD.Dto.Business\DD.Dto.Business.csproj">
+    <ProjectReference Include="..\DD.Dto.Business\DD.Dto.csproj">
       <Project>{0c85747e-8616-4ebc-a200-786ce340508b}</Project>
-      <Name>DD.Dto.Business</Name>
+      <Name>DD.Dto</Name>
     </ProjectReference>
     <ProjectReference Include="..\DD.Repositories.Interfaces\DD.Repositories.Interfaces.csproj">
       <Project>{1745a286-c67a-4fa9-bba9-fc4015382f00}</Project>

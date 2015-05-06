@@ -2,20 +2,37 @@
 <div class="row">
     <div class="col-md-5">
         <form ng-submit="add()">
+            <input type="hidden" ng-model="personRecord.PersonId" />
             <div class="form-group">
                 <label for="RecordTime">Time</label>
-                <input name="RecordTime" type="time" class="form-control" placeholder="Enter record time" ng-model="personRecord.RecordTime">
+                <timepicker ng-model="personRecord.RecordTime" show-meridian="false"></timepicker>
+            </div>
+            <div class="form-group">
+                <label for="Carbs">Carbs</label>
+                <input name="Carbs" type="number" min="0.0" step="0.1" class="form-control" placeholder="Enter Carbohydrates" ng-model="personRecord.Carbohydrates">
+            </div>
+            <div class="form-group">
+                <label for="BloodGloucoseBgm">BG (BGM)</label>
+                <input name="BloodGloucoseBgm" type="number" min="0.0" step="0.1" class="form-control" placeholder="Enter Blood Gloucose (BGM)" ng-model="personRecord.BloodGloucoseBgm">
+            </div>
+            <div class="form-group">
+                <label for="BloodGloucoseCgm">BG (CGM)</label>
+                <input name="BloodGloucoseCgm" type="number" min="0.0" step="0.1" class="form-control" placeholder="Enter Blood Gloucose (CGM)" ng-model="personRecord.BloodGloucoseCgm">
+            </div>
+            <div class="form-group">
+                <label for="BloodGloucoseCgmRaw">BG Raw (CGM)</label>
+                <input name="BloodGloucoseCgmRaw" type="number" min="0.0" step="0.1" class="form-control" placeholder="Enter Blood Gloucose Raw (CGM)" ng-model="personRecord.BloodGloucoseCgmRaw">
             </div>
             <div class="form-group">
                 <label for="Insulin">Insulin</label>
-                <input name="Insulin" type="number" min="0.0" step="any" class="form-control" placeholder="Enter insulin" ng-model="personRecord.Insulin">
+                <input name="Insulin" type="number" min="0.0" step="0.1" class="form-control" placeholder="Enter insulin" ng-model="personRecord.Insulin">
             </div>
             <div class="form-group">
-                <label for="Director">Director</label>
-                <input name="Director" type="text" class="form-control" placeholder="Enter director" ng-model="movie.Director">
+                <label for="Note">Note</label>
+                <input name="Note" type="text" class="form-control" placeholder="Enter note" ng-model="personRecord.Note">
             </div>
-            <a href="/" class="btn btn-default">Cancel</a>
             <button type="submit" class="btn btn-primary">Save</button>
+            <a href="/" class="btn btn-default">Cancel</a>
         </form>
     </div>
 </div>

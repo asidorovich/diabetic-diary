@@ -1,6 +1,8 @@
 using System;
 using System.Configuration;
 using System.Web.Http;
+using DD.Mappers;
+using DD.Mappers.Common.Interfaces;
 using DD.Repositories.Context;
 using DD.Repositories.Interfaces.Context;
 using DD.Repositories.Interfaces.UnitOfWork;
@@ -8,7 +10,7 @@ using DD.Repositories.UnitOfWork;
 using DD.Services.Common;
 using DD.Services.Interfaces.Common;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
+using Unity.WebApi;
 
 namespace DD.Web.Ioc.App_Start
 {
@@ -40,7 +42,7 @@ namespace DD.Web.Ioc.App_Start
         /// change the defaults), as Unity allows resolving a concrete type even if it was not previously registered.</remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
-            GlobalConfiguration.Configuration.DependencyResolver = new Unity.WebApi.UnityDependencyResolver(container);
+            GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
 
             // NOTE: To load from web.config uncomment the line below. Make sure to add a Microsoft.Practices.Unity.Configuration to the using statements.
             // container.LoadConfiguration();
@@ -51,6 +53,9 @@ namespace DD.Web.Ioc.App_Start
             container.RegisterType<IUnitOfWork, UnitOfWork>(new PerRequestLifetimeManager());
 
             container.RegisterType<IPersonRecordService, PersonRecordService>();
+
+
+            container.RegisterType<IMapper, Mapper>();
         }
     }
 }

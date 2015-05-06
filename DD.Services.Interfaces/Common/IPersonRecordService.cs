@@ -7,5 +7,7 @@ namespace DD.Services.Interfaces.Common
     public interface IPersonRecordService
     {
         IList<PersonRecordDto> GetAllPersonRecords(int personId);
+
+        void SavePersonRecord(PersonRecordDto personRecord);
     }
 }

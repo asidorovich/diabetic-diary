@@ -116,6 +116,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\site.css" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Icon.png" />
@@ -124,6 +125,10 @@
     <Content Include="Scripts\angular-resource.min.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
@@ -179,13 +184,21 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DD.Dto.Business\DD.Dto.Business.csproj">
+    <ProjectReference Include="..\DD.Dto.Business\DD.Dto.csproj">
       <Project>{0c85747e-8616-4ebc-a200-786ce340508b}</Project>
-      <Name>DD.Dto.Business</Name>
+      <Name>DD.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DD.Mappers\DD.Mappers.csproj">
+      <Project>{81fb4950-c8fb-4677-ab36-6f32d0d3a781}</Project>
+      <Name>DD.Mappers</Name>
     </ProjectReference>
     <ProjectReference Include="..\DD.Services.Interfaces\DD.Services.Interfaces.csproj">
       <Project>{34c98b07-bce8-4ded-8f3d-ea403e73d77e}</Project>
       <Name>DD.Services.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DD.ViewModels\DD.ViewModels.csproj">
+      <Project>{c6c2f8d7-4b39-4feb-9327-9f0998a051dd}</Project>
+      <Name>DD.ViewModels</Name>
     </ProjectReference>
     <ProjectReference Include="..\DD.Web.Ioc\DD.Web.Ioc.csproj">
       <Project>{52f8dcf7-c42f-4c55-b492-d91d25e83753}</Project>

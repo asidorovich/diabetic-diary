@@ -50,9 +50,9 @@
       <Project>{8495da6c-e0f7-471e-8043-387dfb8c5647}</Project>
       <Name>DD.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DD.Dto.Business\DD.Dto.Business.csproj">
+    <ProjectReference Include="..\DD.Dto.Business\DD.Dto.csproj">
       <Project>{0c85747e-8616-4ebc-a200-786ce340508b}</Project>
-      <Name>DD.Dto.Business</Name>
+      <Name>DD.Dto</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

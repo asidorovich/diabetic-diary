@@ -48,9 +48,13 @@
       <Project>{8495da6c-e0f7-471e-8043-387dfb8c5647}</Project>
       <Name>DD.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DD.Dto.Business\DD.Dto.Business.csproj">
+    <ProjectReference Include="..\DD.Dto.Business\DD.Dto.csproj">
       <Project>{0c85747e-8616-4ebc-a200-786ce340508b}</Project>
-      <Name>DD.Dto.Business</Name>
+      <Name>DD.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DD.Mappers\DD.Mappers.csproj">
+      <Project>{81fb4950-c8fb-4677-ab36-6f32d0d3a781}</Project>
+      <Name>DD.Mappers</Name>
     </ProjectReference>
     <ProjectReference Include="..\DD.Repositories.Interfaces\DD.Repositories.Interfaces.csproj">
       <Project>{1745a286-c67a-4fa9-bba9-fc4015382f00}</Project>
@@ -59,6 +63,10 @@
     <ProjectReference Include="..\DD.Services.Interfaces\DD.Services.Interfaces.csproj">
       <Project>{34c98b07-bce8-4ded-8f3d-ea403e73d77e}</Project>
       <Name>DD.Services.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DD.ViewModels\DD.ViewModels.csproj">
+      <Project>{c6c2f8d7-4b39-4feb-9327-9f0998a051dd}</Project>
+      <Name>DD.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

@@ -116,6 +116,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DD.Mappers\DD.Mappers.csproj">
+      <Project>{81fb4950-c8fb-4677-ab36-6f32d0d3a781}</Project>
+      <Name>DD.Mappers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DD.Repositories.Interfaces\DD.Repositories.Interfaces.csproj">
       <Project>{1745a286-c67a-4fa9-bba9-fc4015382f00}</Project>
       <Name>DD.Repositories.Interfaces</Name>

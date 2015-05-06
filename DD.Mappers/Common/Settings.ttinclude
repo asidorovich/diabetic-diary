@@ -1,0 +1,90 @@
+﻿<#+
+
+public const string projectCode = "GRF.HIRE";
+public const string ProjectCode = "GRF.HIRE";
+
+public class T4TemplateFileManager
+{
+	public T4TemplateFileManager(EntityFrameworkTemplateFileManager fileManager, DynamicTextTransformation textTransform)
+	{
+		_fileManager = fileManager;
+		_textTransform = textTransform;
+	}
+
+	EntityFrameworkTemplateFileManager _fileManager;
+	DynamicTextTransformation _textTransform;
+	//NamingBuilder _naming;
+	
+	//public void SetNamingBuilder(NamingBuilder naming)
+	//{
+	//	_naming = naming;
+	//}
+
+	public void StartNewFile(string fileName)
+	{
+		_fileManager.StartNewFile(fileName);
+	}
+
+	//public void StartNewFile(GenerationArea area)
+	//{
+	//	var partialsConfig = CodeGenerationConfiguration.GetPartialsConfiguration(area);
+	//	var fileName = String.Format("{0}_AG{1}", _naming.ClassName, partialsConfig.FileExtension);
+	//	StartNewFile(fileName);
+	//}
+
+	/*
+	public bool StartNewPartialFile(GenerationArea area)
+	{
+		var namingConfig = CodeGenerationConfiguration.GetNamingConfiguration(area);
+		var partialsConfig = CodeGenerationConfiguration.GetPartialsConfiguration(area);
+
+		var fileName = String.Concat(_naming.ClassName, namingConfig.FileExtension);
+
+		var outputSpecificDirectoryPath = GetOutputDirectoryPath(partialsConfig);
+		var outputDirectoryName = Path.Combine(outputSpecificDirectoryPath, _naming.EntityNamePlural);
+		var outputFilePath = Path.Combine(outputDirectoryName, fileName);
+
+		if(File.Exists(outputFilePath) && !partialsConfig.OverwritePartials)
+		{
+			return false;
+		}
+
+		if(partialsConfig.OverwritePartials)
+		{
+			File.Delete(outputFilePath);
+		}
+
+		_fileManager.StartNewFile(outputFilePath);
+		
+		return true;
+	}
+	*/
+
+	public void Process()
+	{
+		_fileManager.Process();
+	}
+
+	private string GetOutputDirectoryPath()
+	{
+		var specificDirectoryName = String.Empty;
+		var currentDirectoryName = _textTransform.Host.TemplateFile;
+
+		do
+		{
+			currentDirectoryName = Directory.GetParent(currentDirectoryName).FullName;
+			
+			if(!currentDirectoryName.Contains(ProjectCode))
+			{
+				throw new Exception("You're looking for a directory for partials generation outside the project.");
+			}
+
+			specificDirectoryName = currentDirectoryName;//Path.Combine(currentDirectoryName, config.PartialsRootDirectoryName);
+		}
+		while(!Directory.Exists(specificDirectoryName));
+
+		return specificDirectoryName;
+	}
+}
+
+#>

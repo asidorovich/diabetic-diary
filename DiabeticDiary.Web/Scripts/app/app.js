@@ -1,5 +1,5 @@
 ﻿(function() {
-    var app = angular.module("ddApp", ["ngRoute", "personRecordServices"]);
+    var app = angular.module("ddApp", ["ngRoute", 'ui.bootstrap', "personRecordServices"]);
 
     //angular.module("ddApp.controllers", []);
 
@@ -10,7 +10,7 @@
                     templateUrl: '/Home/PersonRecordGrid',
                     controller: 'PersonRecordListController'
                 })
-                .when('/add', {
+                .when('/pr/add', {
                     templateUrl: '/Home/PersonRecordAdd',
                     controller: 'PersonRecordAddController'
                 })

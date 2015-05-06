@@ -15,3 +15,4 @@ DD.Web.Ioc/obj/
 DiabeticDiary.Web/bin/Microsoft.Practices.ServiceLocation.xml
 DiabeticDiary.Web/bin/
 DD.Repositories/bin/
+DD.ViewModels/obj/

@@ -9,6 +9,7 @@ namespace DiabeticDiary.Web.App_Start
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include("~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include("~/Scripts/angular.js")
+                                                               .Include("~/Scripts/angular-ui/ui-bootstrap-tpls.js")
                                                                .Include("~/Scripts/angular-route.js")
                                                                .Include("~/Scripts/angular-resource.js"));
 
